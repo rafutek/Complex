@@ -2,6 +2,44 @@
 import numpy as np # lib pour les tableaux
 import math # lib pour la racine carre
 
+def global_menu():
+    print("Welcome\n")
+    choice ='0'
+    while choice =='0':
+        print("Choose 1 to compute MagZ from ReZ.txt and ImZ.txt, and write it into MagZ.txt")
+        print("Choose 2 to create a graph from a file")
+
+        choice = input ("Please make a choice: ")
+
+        if choice == "1":
+            print("Let's compute MagZ and create MagZ.txt\n")
+        elif choice == "2":
+            print("You want to create a graph from a file")
+        else:
+            print("I don't understand your choice.")
+    
+    return choice
+
+def file_menu():
+    print("You have to choose the file you want\n")
+    choice ='0'
+    while choice =='0':
+        print("Choose 1 for ReZ.txt")
+        print("Choose 2 for ImZ.txt")
+        print("Choose 3 for MagZ.txt")
+
+        choice = input ("Please make a choice: ")
+
+        if choice == "1":
+            print("Let's read ReZ.txt and display the graph\n")
+        elif choice == "2":
+            print("Let's read ImZ.txt and display the graph\n")
+        elif choice == "3":
+            print("Let's read MagZ.txt and display the graph\n")
+        else:
+            print("I don't understand your choice.")
+    
+    return choice
 
 def readFiles_writeMagZ():
     # recuperation des donnees des fichiers sous forme de tableaux
@@ -27,6 +65,8 @@ def readFiles_writeMagZ():
 
 
 
-print("Welcome, \nthis program reads two files to create complex numbers, and display a graph\n")
-
-readFiles_writeMagZ()
+choice = global_menu()
+if choice == "1":
+    readFiles_writeMagZ()
+elif choice == "2":
+    file_menu()
