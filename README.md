@@ -4,7 +4,7 @@ First of all, this code is in Frenglish, the program is in English and comments 
 
 I'll try to explain as clear as possible the aim of this code.
 
-Here have a look at the beginning of a text file:
+A text file has this kind of shape:
 
 | Temps | Amplitude | 
 | :-----: | :-: | 
