@@ -5,11 +5,11 @@ First of all, this code is in Frenglish, the program is in English and comments 
 I'll try to explain as clear as possible the aim of this code.
 
 Here have a look at the beginning of a text file:
-Temps 	Amplitude 
-0   0
-0	69.6193
-1.84E-8	69.861
-3.68E-8	70.2233
+| Temps  | Amplitude |
+|:------:|:---------:|
+|   0    |     0     |
+|   0    |	 69.861  |
+|3.68E-8 |	70.2233  |
 ...
 
 The first column is time, and the second is the value in function of that time.
