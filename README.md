@@ -33,3 +33,10 @@ Finally we close the file.
 Then, if the choice is one of the text files, the program calls readFile_displayGraph(filename). This function gets the values and store them into a numpy array, the exact same way as done in readFiles_writeMagZ().
 We choose that the first column is the abscissa, and the second the ordinate.
 We give a name to the graph (the file name), and to coordinates with matplotlib functions. Finally we create and display the graph with other matplotlib functions.
+
+# Tips
+- To use this program execute these commands:
+  - git clone  https://github.com/rafutek/Complex.git
+  - cd Commplex/
+  - python3 impedance.py
+- You must create MagZ.txt choosing the first option in the global menu if you want to display the graph of MagZ.txt !
