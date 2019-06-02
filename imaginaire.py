@@ -78,10 +78,11 @@ def readFile_displayGraph(filename):
     plt.show() # et on l'affiche
 
 
-choice = global_menu()
+# Le programme commence ici
+choice = global_menu() # menu principal, creation MagZ.txt ou affichage courbe
 if choice == "1":
-    readFiles_writeMagZ()
-elif choice == "2":
+    readFiles_writeMagZ()# lecture ReZ.txt et ImZ.txt, calcul de MagZ et ecriture dans MagZ.txt
+elif choice == "2": # si affichage courbe on doit choisir le fichier
     filename = file_menu()
     if filename != '0':
-        readFile_displayGraph(filename)
+        readFile_displayGraph(filename)# lecture du fichier en question et affichage de sa courbe
