@@ -1,4 +1,4 @@
-# Complex
+# Details
 
 First of all, this code is in Frenglish, the program is in English and comments are in French.
 
