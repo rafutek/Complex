@@ -1,6 +1,7 @@
 # import librairies necessaires
 import numpy as np # lib pour les tableaux
 import math # lib pour la racine carre
+from matplotlib import pyplot as plt # lib pour le graph
 
 def global_menu():
     print("Welcome\n")
@@ -32,14 +33,17 @@ def file_menu():
 
         if choice == "1":
             print("Let's read ReZ.txt and display the graph\n")
+            return "ReZ.txt"
         elif choice == "2":
             print("Let's read ImZ.txt and display the graph\n")
+            return "ImZ.txt"
         elif choice == "3":
             print("Let's read MagZ.txt and display the graph\n")
+            return "MagZ.txt"
         else:
             print("I don't understand your choice.")
-    
-    return choice
+            return '0'
+
 
 def readFiles_writeMagZ():
     # recuperation des donnees des fichiers sous forme de tableaux
@@ -63,10 +67,21 @@ def readFiles_writeMagZ():
         exit(1)
 
 
+def readFile_displayGraph(filename):
+    data = np.genfromtxt(filename,skip_header=2) # recupere le temps et l'amplitude du fichier sous forme de tableau 2D
+    x = data[:,0] # l'abscisse correspond a la premiere colonne
+    y = data[:,1] # et l'ordonnee a la deuxieme
+    plt.title(filename) # on donne un titre au graph
+    plt.xlabel("Temps") # on nomme les axes
+    plt.ylabel("Amplitude") 
+    plt.plot(x,y) # on cree le graph 
+    plt.show() # et on l'affiche
 
 
 choice = global_menu()
 if choice == "1":
     readFiles_writeMagZ()
 elif choice == "2":
-    file_menu()
+    filename = file_menu()
+    if filename != '0':
+        readFile_displayGraph(filename)
